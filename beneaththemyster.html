@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            background-color: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        #yes {
+            background-color: green;
+            color: white;
+        }
+        #no {
+            background-color: red;
+            color: white;
+        }
+        .fade {
+            animation: fadeOut 2s forwards;
+        }
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Will you be my Valentine?</h1>
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
 
+    <script>
+        document.getElementById("yes").onclick = function() {
+            alert("Yay! ❤️ I'm so happy you said yes!");
+        };
+
+        document.getElementById("no").onclick = function() {
+            document.querySelector("body").classList.add("fade");
+            setTimeout(function() {
+                document.body.innerHTML = "<h1>Okay, I'll try again next year! ❤️</h1>";
+            }, 2000); // Wait for fade out to finish before changing content
+        };
+    </script>
+</body>
+</html>
